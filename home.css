@@ -1,0 +1,25 @@
+/* set the max height of the carousel images not to exceed a certain height */
+/* max-height is higher on the man page */
+.container-fluid img {
+  max-height: 55rem;
+}
+
+@media (min-width: 1420px) {
+  nav.header-float {
+    border-bottom-style: solid;
+    position: absolute !important;
+    width: 90% !important;
+    top: 3rem !important;
+    border-radius: 5rem;
+    margin: auto;
+    inset: auto 0;
+    transition: all 300ms ease !important;
+  }
+  nav.header-stick {
+    position: sticky !important;
+    top: 0 !important;
+    width: 100% !important;
+    border-radius: 0 !important;
+    border-bottom: none;
+  }
+}
