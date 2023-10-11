@@ -1,11 +1,81 @@
 :root {
   --primary: #008000;
-  --secondary: #797900;
+  --secondary: #4b4b00;
+  --secondary-darker: #797900;
   --box-shadow: 0 0 0 0.25rem #79790040;
   --box-shadow-darker: 0 0 0 0.25rem #79790080;
+  --light: #f0f0f0;
   --secondary-light: #e0e0d8;
+  --tertiary-color: #f8f9fa;
   --button-hover: #808000;
   --border-radius-primary: 1rem;
+}
+
+.blog-card:hover .blog-image {
+  transform: scale(1.2);
+}
+
+.blog-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 350ms ease-in-out;
+}
+.blog-image-container {
+  padding: 0;
+  overflow: hidden;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: var(--primary) !important;
+}
+
+.bg-blog-card {
+  background-color: var(--tertiary-color) !important;
+}
+
+/* blog card styles */
+.blog-card {
+  border: 2px solid gainsboro;
+}
+
+.blog-actions {
+  font-size: 0.95rem;
+}
+
+a.esl-link {
+  color: var(--primary);
+}
+
+a.esl-link:hover {
+  color: var(--secondary);
+}
+
+/* overwriting the default color of links in the template to match the theme */
+.blog-card a {
+  color: var(--primary) !important;
+}
+
+.blog-card a:hover {
+  color: var(--secondary) !important;
+}
+
+.blog-tag {
+  text-align: center;
+  text-transform: lowercase;
+  background-color: var(--light);
+  opacity: 0.8;
+  font-size: 0.9rem;
+  border: 1px solid var(--secondary);
+  border-radius: 0.75rem;
+  padding: 0.2rem 0.75rem;
+}
+
+.blog-tag:hover {
+  opacity: 1;
+  border: 1px solid var(--secondary);
+  padding: 0.2rem 0.75rem;
 }
 
 #spinner .text-primary {
@@ -43,10 +113,6 @@
 
 .btn-primary:active:focus {
   box-shadow: var(--box-shadow-darker);
-}
-
-.vacancy-post .top {
-  border-bottom: 5px dashed var(--secondary);
 }
 
 .partner-image {
@@ -119,9 +185,18 @@
   background-color: #008000 !important;
 }
 
+.blog {
+  border: 1px solid green;
+}
+
 nav {
   top: 0 !important;
 }
+
+/* quick fix for horizontally overflowing navbar */
+/* #navbarCollapse {
+  overflow: hidden;
+} */
 
 nav .collapse.navbar-collapse {
   padding-right: 3.25rem;
@@ -136,12 +211,7 @@ nav.border-primary {
   border-color: var(--primary) !important;
 }
 
-nav .collapse.navbar-collapse {
-  padding-block: rem;
-}
-
 a.logo {
-  background-color: transparent !important;
   padding-right: 0rem !important;
   padding-left: 3.25rem !important;
 }
@@ -163,11 +233,96 @@ a.logo img {
   height: 48px;
 }
 
+.blog-section-title {
+  background: var(--secondary-darker);
+  color: white;
+}
+
+.blog-popular-news {
+  border-bottom: 2px dotted var(--secondary-darker);
+}
+
+.blog-popular-news:last-of-type {
+  border-bottom: none;
+}
+
+.color-secondary {
+  color: var(--secondary) !important;
+}
+
+.dryport-border-bt {
+  border-bottom: 5px double var(--secondary-darker);
+}
+
+.agents a {
+  color: var(--primary);
+}
+
+.agents a:hover {
+  color: var(--secondary);
+}
+
+.table-agents {
+  border: 3px dashed var(--secondary);
+}
+
+.table-agents th,
+.table-agents td {
+  border: 1px solid black;
+  padding: 0.5rem;
+}
+
+.table-empty-container th,
+.table-empty-container td {
+  border: 1px solid black;
+  padding: 0.5rem;
+}
+
+.table-empty-container thead {
+  background-color: var(--secondary);
+  color: white;
+}
+
+.table-fleet-position thead {
+  background-color: var(--secondary);
+  color: white;
+}
+
+.empty-container-form {
+  padding: 1rem 2rem !important;
+}
+
+.table-utility th,
+.table-utility td {
+  border: 1px solid black;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.agents {
+  overflow-x: scroll;
+}
+
+/* styled list bullets */
+.mission-and-vision li {
+  list-style-type: square;
+}
+
 /* set the max height of the carousel images not to exceed a certain height */
 /* this is overridden on the home page */
-.container-fluid img {
+.img-contained {
   max-width: 100%;
-  max-height: 32rem;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.container-fluid img,
+.logo-container-news,
+.blog-small-news {
+  max-width: 100%;
+  max-height: 30rem;
   object-fit: cover;
 }
 
@@ -177,6 +332,38 @@ a.logo img {
 
 .features .btn-link {
   color: var(--secondary) !important;
+}
+
+.blog-sidebar {
+  border-left: 1px solid gainsboro;
+  border-right: 1px solid gainsboro;
+}
+.blog-cloud-tag {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid gainsboro;
+  background: white;
+  color: black;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.blog-cloud-tag:hover {
+  background: var(--secondary-darker);
+  color: white;
+}
+
+.blog-sidebar .btn.btn-social {
+  margin-right: 5px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--secondary);
+  border: 1px solid var(--secondary);
+  border-radius: 35px;
+  transition: 0.3s;
 }
 
 @media (min-width: 992px) and (max-width: 1240px) {
@@ -210,6 +397,11 @@ a.logo img {
   height: 100%;
 }
 
+/* overflowing horizontally overflowing navbar  */
+body {
+  overflow-x: hidden;
+}
+
 .icon {
   max-width: 30px;
 }
@@ -219,10 +411,13 @@ a.logo img {
 }
 
 @media (max-width: 992px) {
+  .blog-sidebar {
+    border: none;
+  }
   .navbar-light .navbar-nav .nav-link {
     padding: 0.5rem !important;
   }
-  a.logo.bg-primary {
+  a.logo {
     padding-left: 1.5rem !important;
     max-width: 32vw;
   }
@@ -232,10 +427,14 @@ a.logo img {
   .vacancy-post {
     font-size: 1.1rem;
   }
+  .table-wrapper {
+    border: 4px dotted var(--secondary);
+    padding: 2rem;
+  }
 }
 
 @media (max-width: 480px) {
-  a.logo.bg-primary {
+  a.logo {
     padding-left: 0.5rem !important;
     max-width: 28vw;
   }
@@ -253,4 +452,23 @@ a.logo img {
 
 .features .btn-sm {
   padding-left: 0 !important;
+}
+
+@media (max-width: 576px) {
+  .blog-card {
+    max-width: 95%;
+    margin: auto;
+  }
+  .blog-card .blog-image-container {
+    aspect-ratio: 16 / 9;
+  }
+  .blog-image {
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-actions {
+    font-size: 0.825rem;
+  }
 }
